@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxy66v70ce1j4"]
+
+[ext_resource type="Script" path="res://scripts/changeScene/unlock_door.gd" id="1_jhfgu"]
+[ext_resource type="Texture2D" uid="uid://dtx68r2ody4gg" path="res://sprites/Dungeon tileset/unlock_door.png" id="1_ms0be"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73lhx"]
+size = Vector2(48, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hn64"]
+size = Vector2(50, 21)
+
+[sub_resource type="Animation" id="Animation_bkwva"]
+resource_name = "Closed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnlockDoor:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.168627, 0.168627, 1), Color(1, 1, 1, 1), Color(1, 0.168627, 0.168627, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ug30v"]
+resource_name = "Open"
+length = 1.5
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnlockDoor:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uc8cg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnlockDoor:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gosxj"]
+_data = {
+"Closed": SubResource("Animation_bkwva"),
+"Open": SubResource("Animation_ug30v"),
+"RESET": SubResource("Animation_uc8cg")
+}
+
+[node name="unlocked_door" type="StaticBody2D"]
+script = ExtResource("1_jhfgu")
+
+[node name="UnlockDoor" type="Sprite2D" parent="."]
+texture = ExtResource("1_ms0be")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_73lhx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_4hn64")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gosxj")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

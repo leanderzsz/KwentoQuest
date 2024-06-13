@@ -1,0 +1,238 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhvypubonfmor"]
+
+[ext_resource type="Script" path="res://scripts/game_systems/controls.gd" id="1_vfs65"]
+[ext_resource type="Texture2D" uid="uid://c67cs7paeadqc" path="res://sprites/Titlescreen/14ee07bf274d5f25bf8f6f6fad3df0ef.png" id="2_w5osu"]
+[ext_resource type="Texture2D" uid="uid://c6og67k32i404" path="res://sprites/Created/e.png" id="3_46x4k"]
+[ext_resource type="Texture2D" uid="uid://cpbd4y3n206a2" path="res://sprites/Created/m.png" id="4_ucbsa"]
+[ext_resource type="Texture2D" uid="uid://dec7lfah0mayk" path="res://sprites/Created/keys.png" id="5_csh3m"]
+[ext_resource type="Texture2D" uid="uid://ccr51mf7hi2l" path="res://sprites/Created/arrow.png" id="6_ns8kq"]
+[ext_resource type="Texture2D" uid="uid://iwghtcxjh6cn" path="res://sprites/characters/Attack.png" id="7_hsaop"]
+[ext_resource type="Texture2D" uid="uid://bpggeh6mrtsmt" path="res://sprites/Created/map.png" id="8_34c7q"]
+
+[sub_resource type="SystemFont" id="SystemFont_fihw6"]
+font_names = PackedStringArray("Impact")
+
+[node name="Control Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vfs65")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -323.0
+offset_right = 572.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w5osu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1204.0
+offset_bottom = 708.0
+color = Color(0.403922, 0.839216, 0.439216, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 440.0
+offset_top = 32.0
+offset_right = 836.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0.988235, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.960784, 0.858824, 0.0470588, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_fihw6")
+theme_override_font_sizes/font_size = 64
+text = "Game Controls "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 111.0
+offset_top = 302.0
+offset_right = 451.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0.917647, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.960784, 0.858824, 0.0470588, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_fihw6")
+theme_override_font_sizes/font_size = 32
+text = "Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 2
+offset_left = 697.0
+offset_top = 176.0
+offset_right = 1037.0
+offset_bottom = 219.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_fihw6")
+theme_override_font_sizes/font_size = 32
+text = "Up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 2
+offset_left = 491.0
+offset_top = 377.0
+offset_right = 831.0
+offset_bottom = 420.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_fihw6")
+theme_override_font_sizes/font_size = 32
+text = "Left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 2
+offset_left = 919.0
+offset_top = 375.0
+offset_right = 1259.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_fihw6")
+theme_override_font_sizes/font_size = 32
+text = "Right
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 2
+offset_left = 698.0
+offset_top = 482.0
+offset_right = 1038.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_fihw6")
+theme_override_font_sizes/font_size = 32
+text = "Down
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 572.0
+offset_right = 444.0
+offset_bottom = 615.0
+theme_override_colors/font_color = Color(0.917647, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.960784, 0.858824, 0.0470588, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_fihw6")
+theme_override_font_sizes/font_size = 32
+text = "Map"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 2
+offset_left = 692.0
+offset_top = 535.0
+offset_right = 1032.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(0.917647, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.960784, 0.858824, 0.0470588, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_fihw6")
+theme_override_font_sizes/font_size = 32
+text = "Movement"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="E" type="Sprite2D" parent="."]
+position = Vector2(135, 322)
+scale = Vector2(0.675926, 0.622807)
+texture = ExtResource("3_46x4k")
+
+[node name="M" type="Sprite2D" parent="."]
+position = Vector2(142, 594)
+scale = Vector2(0.652381, 0.590909)
+texture = ExtResource("4_ucbsa")
+
+[node name="Keys" type="Sprite2D" parent="."]
+position = Vector2(863, 360)
+scale = Vector2(0.762048, 0.715859)
+texture = ExtResource("5_csh3m")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(202, 323)
+scale = Vector2(0.0849609, 0.0644531)
+texture = ExtResource("6_ns8kq")
+
+[node name="Arrow2" type="Sprite2D" parent="."]
+position = Vector2(204, 596)
+scale = Vector2(0.0849609, 0.0644531)
+texture = ExtResource("6_ns8kq")
+
+[node name="Arrow3" type="Sprite2D" parent="."]
+position = Vector2(722, 399)
+scale = Vector2(0.0849609, 0.0644531)
+texture = ExtResource("6_ns8kq")
+
+[node name="Arrow5" type="Sprite2D" parent="."]
+position = Vector2(1010, 399)
+rotation = 3.14159
+scale = Vector2(0.0849609, 0.0644531)
+texture = ExtResource("6_ns8kq")
+
+[node name="Arrow6" type="Sprite2D" parent="."]
+position = Vector2(865, 461)
+rotation = 4.71239
+scale = Vector2(0.0849609, 0.0644531)
+texture = ExtResource("6_ns8kq")
+
+[node name="Arrow4" type="Sprite2D" parent="."]
+position = Vector2(866, 259)
+rotation = 1.5708
+scale = Vector2(0.0849609, 0.0644531)
+texture = ExtResource("6_ns8kq")
+
+[node name="Attack" type="Sprite2D" parent="."]
+position = Vector2(221, 199)
+scale = Vector2(5.64583, 6.1)
+texture = ExtResource("7_hsaop")
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(213, 496)
+scale = Vector2(0.256836, 0.268555)
+texture = ExtResource("8_34c7q")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 649.0
+offset_right = 717.0
+offset_bottom = 696.0
+text = "Press to continue
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

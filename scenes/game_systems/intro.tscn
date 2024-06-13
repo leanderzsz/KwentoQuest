@@ -1,0 +1,738 @@
+[gd_scene load_steps=26 format=3 uid="uid://bgue3merfw3gu"]
+
+[ext_resource type="Script" path="res://scripts/game_systems/intro.gd" id="1_aq740"]
+[ext_resource type="Texture2D" uid="uid://cptsaif4qn4ns" path="res://asset/pictures/philipines.png" id="1_yck6a"]
+[ext_resource type="Texture2D" uid="uid://ciypt1abga3v7" path="res://asset/pictures/sunlight-clip-art-png-favpng-j1U6pXGFuku1DPfcqgBHDD6U5-removebg-preview.png" id="2_3im4l"]
+[ext_resource type="Texture2D" uid="uid://b7gxildgfhmeb" path="res://asset/pictures/hooded_figure.png" id="2_8ong5"]
+[ext_resource type="Texture2D" uid="uid://2aff7h46y3l5" path="res://asset/pictures/room.png" id="2_abobu"]
+[ext_resource type="Texture2D" uid="uid://djgj4lbncm7x2" path="res://asset/pictures/museum stand.png" id="2_i8pyo"]
+[ext_resource type="Texture2D" uid="uid://cj2383xq3leiv" path="res://asset/pictures/forest.jpg" id="2_ki4wt"]
+[ext_resource type="Texture2D" uid="uid://c8bjoyjxcj45t" path="res://asset/pictures/godess3.png" id="2_l45ha"]
+[ext_resource type="Texture2D" uid="uid://wl3ywxma21wd" path="res://asset/pictures/dugeon_boss_room.jpg" id="2_lvwm7"]
+[ext_resource type="Texture2D" uid="uid://bc4o4trj8p08g" path="res://asset/pictures/istockphoto-1404630379-612x612.jpg" id="2_yr1yt"]
+[ext_resource type="Texture2D" uid="uid://bv56wacblhlo5" path="res://asset/pictures/side_hooded_figure.png" id="3_kdwq8"]
+[ext_resource type="Texture2D" uid="uid://cipola4i0i8hd" path="res://asset/pictures/temple.png" id="3_l7u1t"]
+[ext_resource type="Texture2D" uid="uid://cif64hup1bjkk" path="res://asset/pictures/mountain.jpg" id="3_pdjj6"]
+[ext_resource type="Texture2D" uid="uid://cp6fk0nlkacb" path="res://asset/pictures/godess2.png" id="3_u2jyb"]
+[ext_resource type="Texture2D" uid="uid://btsahe73bmmk7" path="res://asset/pictures/beach.jpg" id="4_1kw7s"]
+[ext_resource type="Texture2D" uid="uid://cv0tf0ma0q3o3" path="res://sprites/characters/character_back.png" id="4_7gnxx"]
+[ext_resource type="Texture2D" uid="uid://dgf21q3ggwxg7" path="res://asset/pictures/god-removebg-preview.png" id="4_dlv0k"]
+[ext_resource type="Texture2D" uid="uid://cq7ksijbixgk1" path="res://asset/pictures/godess1.png" id="4_jc2oh"]
+[ext_resource type="Texture2D" uid="uid://dgqqiqv126qbc" path="res://asset/pictures/sunrise.png" id="5_3qbbo"]
+[ext_resource type="Texture2D" uid="uid://vi4aihlfhf1w" path="res://asset/pictures/sword artifact.png" id="6_rnyyf"]
+[ext_resource type="Texture2D" uid="uid://cnp7vpuinl1i7" path="res://asset/pictures/star.png" id="6_xx7c2"]
+[ext_resource type="Texture2D" uid="uid://bmabccqt1tgup" path="res://asset/pictures/crescent.png" id="7_rw450"]
+[ext_resource type="Texture2D" uid="uid://b02pmqf7ct4j3" path="res://asset/pictures/hero.png" id="23_k2cn0"]
+[ext_resource type="Texture2D" uid="uid://cl5duyb7i7wwb" path="res://sprites/Created/textbox.png" id="24_6xejb"]
+
+[sub_resource type="SystemFont" id="SystemFont_hdgo1"]
+font_names = PackedStringArray("Impact")
+
+[node name="intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aq740")
+
+[node name="I11" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="I11"]
+layout_mode = 0
+offset_right = 1248.0
+offset_bottom = 728.0
+color = Color(0, 0, 0, 1)
+
+[node name="MuseumStand" type="Sprite2D" parent="I11"]
+position = Vector2(608, 536)
+texture = ExtResource("2_i8pyo")
+
+[node name="Sunlight-clip-art-png-favpng-j1u6pXgFuku1dPfcqgBhdd6u5-removebg-preview3" type="Sprite2D" parent="I11"]
+modulate = Color(1, 1, 0, 0.827451)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(616, 328)
+scale = Vector2(0.49, 0.458)
+texture = ExtResource("2_3im4l")
+
+[node name="SwordArtifact2" type="Sprite2D" parent="I11"]
+position = Vector2(616, 336)
+rotation = 0.785398
+scale = Vector2(0.5813, 0.5813)
+texture = ExtResource("6_rnyyf")
+
+[node name="Textbox9" type="Sprite2D" parent="I11"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I11/Textbox9"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "By defeating the sorcerer you can return the stolen artifact to its rightful place"
+
+[node name="Button11" type="Button" parent="I11"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I10" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DugeonBossRoom" type="Sprite2D" parent="I10"]
+position = Vector2(604, 352)
+scale = Vector2(0.6375, 0.666667)
+texture = ExtResource("2_lvwm7")
+
+[node name="SideHoodedFigure" type="Sprite2D" parent="I10"]
+position = Vector2(792, 392)
+texture = ExtResource("3_kdwq8")
+
+[node name="Hero" type="Sprite2D" parent="I10"]
+position = Vector2(384, 432)
+scale = Vector2(0.208668, 0.225621)
+texture = ExtResource("23_k2cn0")
+
+[node name="Textbox8" type="Sprite2D" parent="I10"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I10/Textbox8"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "With the blessing of the goddess you have a chance to defeat the sorcerer"
+
+[node name="Button10" type="Button" parent="I10"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I9" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="I9"]
+layout_mode = 0
+offset_right = 1232.0
+offset_bottom = 704.0
+color = Color(0.756863, 0.682353, 0.4, 1)
+
+[node name="Godess3" type="Sprite2D" parent="I9"]
+visible = false
+position = Vector2(992, 216)
+texture = ExtResource("2_l45ha")
+
+[node name="Godess2" type="Sprite2D" parent="I9"]
+visible = false
+position = Vector2(592, 216)
+texture = ExtResource("3_u2jyb")
+
+[node name="Godess1" type="Sprite2D" parent="I9"]
+visible = false
+position = Vector2(192, 216)
+texture = ExtResource("4_jc2oh")
+
+[node name="Sunrise" type="Sprite2D" parent="I9"]
+visible = false
+position = Vector2(992, 432)
+scale = Vector2(4, 4)
+texture = ExtResource("5_3qbbo")
+
+[node name="Star" type="Sprite2D" parent="I9"]
+visible = false
+position = Vector2(592, 432)
+scale = Vector2(4, 4)
+texture = ExtResource("6_xx7c2")
+
+[node name="Crescent" type="Sprite2D" parent="I9"]
+visible = false
+position = Vector2(192, 432)
+scale = Vector2(4, 4)
+texture = ExtResource("7_rw450")
+
+[node name="Textbox9" type="Sprite2D" parent="I9"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I9/Textbox9"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "By meeting the goddess they will bless you with there blessings"
+
+[node name="Textbox8" type="Sprite2D" parent="I9"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I9/Textbox8"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "You will meet the three goddess"
+
+[node name="Textbox7" type="Sprite2D" parent="I9"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I9/Textbox7"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "By concurring the shrines"
+
+[node name="Button9C" type="Button" parent="I9"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="Button9B" type="Button" parent="I9"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="Button9A" type="Button" parent="I9"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I8" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="I8"]
+layout_mode = 0
+offset_right = 1216.0
+offset_bottom = 712.0
+color = Color(0, 0, 0, 1)
+
+[node name="Forest" type="Sprite2D" parent="I8"]
+visible = false
+position = Vector2(284.5, 357)
+scale = Vector2(1.99815, 1.97222)
+texture = ExtResource("2_ki4wt")
+
+[node name="Mountain" type="Sprite2D" parent="I8"]
+visible = false
+position = Vector2(1192, 352)
+scale = Vector2(1.37114, 1.98889)
+texture = ExtResource("3_pdjj6")
+
+[node name="Beach" type="Sprite2D" parent="I8"]
+visible = false
+position = Vector2(-30, 352)
+scale = Vector2(1.39333, 2)
+texture = ExtResource("4_1kw7s")
+
+[node name="Textbox9" type="Sprite2D" parent="I8"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I8/Textbox9"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "And the last shrine is at the top of a mountain"
+
+[node name="Textbox8" type="Sprite2D" parent="I8"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I8/Textbox8"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "The second shrine is in the forest"
+
+[node name="Textbox7" type="Sprite2D" parent="I8"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I8/Textbox7"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "The first shrine is in a beach"
+
+[node name="Textbox6" type="Sprite2D" parent="I8"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I8/Textbox6"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "But first you need to find and concour the hidden shrines   "
+
+[node name="Button8D" type="Button" parent="I8"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="Button8C" type="Button" parent="I8"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="Button8B" type="Button" parent="I8"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="Button8A" type="Button" parent="I8"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I7" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Room" type="Sprite2D" parent="I7"]
+position = Vector2(632, 324)
+scale = Vector2(1, 1.07778)
+texture = ExtResource("2_abobu")
+
+[node name="God-removebg-preview" type="Sprite2D" parent="I7"]
+position = Vector2(896, 384)
+scale = Vector2(1.383, 1.37059)
+texture = ExtResource("4_dlv0k")
+
+[node name="CharacterBack" type="Sprite2D" parent="I7"]
+position = Vector2(464, 536)
+scale = Vector2(24.75, 24.0682)
+texture = ExtResource("4_7gnxx")
+
+[node name="Textbox6" type="Sprite2D" parent="I7"]
+position = Vector2(600, 112)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I7/Textbox6"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "You have been chosen by the god to retrieve the stolen artifact"
+
+[node name="Button7" type="Button" parent="I7"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I6" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="I6"]
+layout_mode = 0
+offset_right = 1216.0
+offset_bottom = 712.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sunlight-clip-art-png-favpng-j1u6pXgFuku1dPfcqgBhdd6u5-removebg-preview" type="Sprite2D" parent="I6"]
+modulate = Color(1, 1, 0, 0.827451)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(392, 288)
+scale = Vector2(0.852, 0.82)
+texture = ExtResource("2_3im4l")
+
+[node name="SwordArtifact2" type="Sprite2D" parent="I6"]
+position = Vector2(400, 296)
+rotation = 0.785398
+texture = ExtResource("6_rnyyf")
+
+[node name="God-removebg-preview" type="Sprite2D" parent="I6"]
+position = Vector2(864, 264)
+scale = Vector2(1.383, 1.37059)
+texture = ExtResource("4_dlv0k")
+
+[node name="Textbox5" type="Sprite2D" parent="I6"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I6/Textbox5"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "The artifact host the power of a god "
+
+[node name="Button6" type="Button" parent="I6"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I5" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="I5"]
+layout_mode = 0
+offset_right = 1208.0
+offset_bottom = 704.0
+color = Color(0, 0, 0, 1)
+
+[node name="MuseumStand" type="Sprite2D" parent="I5"]
+position = Vector2(608, 536)
+texture = ExtResource("2_i8pyo")
+
+[node name="Textbox4" type="Sprite2D" parent="I5"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I5/Textbox4"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "The artifact has been stolen by a melevolent sorcerer"
+
+[node name="Button5" type="Button" parent="I5"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I4" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="I4"]
+layout_mode = 0
+offset_right = 1208.0
+offset_bottom = 712.0
+color = Color(0, 0, 0, 1)
+
+[node name="HoodedFigure" type="Sprite2D" parent="I4"]
+position = Vector2(624, 376)
+scale = Vector2(2.3125, 2.8125)
+texture = ExtResource("2_8ong5")
+
+[node name="Sunlight-clip-art-png-favpng-j1u6pXgFuku1dPfcqgBhdd6u5-removebg-preview2" type="Sprite2D" parent="I4"]
+modulate = Color(1, 1, 0, 0.827451)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(616, 328)
+scale = Vector2(0.49, 0.458)
+texture = ExtResource("2_3im4l")
+
+[node name="MuseumStand" type="Sprite2D" parent="I4"]
+position = Vector2(608, 536)
+texture = ExtResource("2_i8pyo")
+
+[node name="SwordArtifact" type="Sprite2D" parent="I4"]
+position = Vector2(616, 336)
+rotation = 0.785398
+scale = Vector2(0.5813, 0.5813)
+texture = ExtResource("6_rnyyf")
+
+[node name="Button4" type="Button" parent="I4"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I3" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="I3"]
+layout_mode = 0
+offset_right = 1216.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="MuseumStand" type="Sprite2D" parent="I3"]
+position = Vector2(608, 536)
+texture = ExtResource("2_i8pyo")
+
+[node name="Sunlight-clip-art-png-favpng-j1u6pXgFuku1dPfcqgBhdd6u5-removebg-preview3" type="Sprite2D" parent="I3"]
+modulate = Color(1, 1, 0, 0.827451)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(616, 328)
+scale = Vector2(0.49, 0.458)
+texture = ExtResource("2_3im4l")
+
+[node name="SwordArtifact2" type="Sprite2D" parent="I3"]
+position = Vector2(616, 336)
+rotation = 0.785398
+scale = Vector2(0.5813, 0.5813)
+texture = ExtResource("6_rnyyf")
+
+[node name="Textbox2" type="Sprite2D" parent="I3"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I3/Textbox2"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "Hides a powerful artifact"
+
+[node name="Button3" type="Button" parent="I3"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Istockphoto-1404630379-612x612" type="Sprite2D" parent="I2"]
+position = Vector2(600, 356)
+scale = Vector2(1.96078, 1.67924)
+texture = ExtResource("2_yr1yt")
+
+[node name="Temple" type="Sprite2D" parent="I2"]
+position = Vector2(600, 584)
+scale = Vector2(0.673611, 0.601563)
+texture = ExtResource("3_l7u1t")
+
+[node name="Textbox2" type="Sprite2D" parent="I2"]
+position = Vector2(600, 104)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I2/Textbox2"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "In one of its shrines"
+
+[node name="Button2" type="Button" parent="I2"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[node name="I1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Philipines" type="Sprite2D" parent="I1"]
+position = Vector2(600, 352)
+scale = Vector2(0.9375, 0.977778)
+texture = ExtResource("1_yck6a")
+
+[node name="Textbox" type="Sprite2D" parent="I1"]
+position = Vector2(600, 592)
+scale = Vector2(0.516667, 0.5)
+texture = ExtResource("24_6xejb")
+
+[node name="Label" type="Label" parent="I1/Textbox"]
+offset_left = -1037.0
+offset_top = -96.0
+offset_right = 1022.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_hdgo1")
+theme_override_font_sizes/font_size = 64
+text = "In the ancient Philippine archipelago"
+
+[node name="Button" type="Button" parent="I1"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 648.0
+offset_right = 717.0
+offset_bottom = 695.0
+text = "Press to continue
+"
+
+[connection signal="pressed" from="I11/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="I10/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="I9/Button9C" to="." method="_on_button_9c_pressed"]
+[connection signal="pressed" from="I9/Button9B" to="." method="_on_button_9b_pressed"]
+[connection signal="pressed" from="I9/Button9A" to="." method="_on_button_9a_pressed"]
+[connection signal="pressed" from="I8/Button8D" to="." method="_on_button_8d_pressed"]
+[connection signal="pressed" from="I8/Button8C" to="." method="_on_button_8c_pressed"]
+[connection signal="pressed" from="I8/Button8B" to="." method="_on_button_8b_pressed"]
+[connection signal="pressed" from="I8/Button8A" to="." method="_on_button_8a_pressed"]
+[connection signal="pressed" from="I7/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="I6/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="I5/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="I4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="I3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="I2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="I1/Button" to="." method="_on_button_pressed"]

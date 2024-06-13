@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnqjag2oinb3r"]
+
+[ext_resource type="Script" path="res://scripts/Items/throwable_knife.gd" id="1_e6hd7"]
+[ext_resource type="Texture2D" uid="uid://2crflqkxiy7d" path="res://sprites/v1.1 dungeon crawler 16X16 pixel pack/enemies/goblin/goblin_knife.png" id="2_p736k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1prs"]
+radius = 1.0
+height = 10.0
+
+[node name="ThrowableKnife" type="Area2D" groups=["Projectile"]]
+collision_mask = 2048
+script = ExtResource("1_e6hd7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_y1prs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.837758
+texture = ExtResource("2_p736k")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

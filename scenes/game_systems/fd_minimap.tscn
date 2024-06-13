@@ -1,0 +1,598 @@
+[gd_scene load_steps=8 format=3 uid="uid://6j70qg2mr76c"]
+
+[ext_resource type="Texture2D" uid="uid://dyd8sse2be5cg" path="res://sprites/minimap/mm_fd.png" id="1_a4q3d"]
+[ext_resource type="Script" path="res://scripts/game_systems/fd_minimap.gd" id="1_dbbwh"]
+[ext_resource type="Texture2D" uid="uid://b27tuq3g32kpx" path="res://asset/pictures/Skull.png" id="3_ybdbs"]
+[ext_resource type="Texture2D" uid="uid://c7cbvrfa7cmiw" path="res://asset/pictures/SkullKey.png" id="4_gg71o"]
+
+[sub_resource type="Animation" id="Animation_fmeam"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1sg2g"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6m8uf"]
+_data = {
+"RESET": SubResource("Animation_fmeam"),
+"blink": SubResource("Animation_1sg2g")
+}
+
+[node name="fd_minimap" type="ColorRect"]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -0.00799561
+offset_bottom = 0.00799561
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0, 0, 0, 0.392157)
+script = ExtResource("1_dbbwh")
+metadata/_edit_use_anchors_ = true
+
+[node name="MmFd" type="Sprite2D" parent="."]
+position = Vector2(160, 96)
+texture = ExtResource("1_a4q3d")
+
+[node name="position" type="Label" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 144.0
+offset_right = 256.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="location_name" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Forest Dungeon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fd_entrance" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_entrance"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 153.0
+offset_top = 116.0
+offset_right = 167.0
+offset_bottom = 130.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_entrance/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_entrance"]
+offset_left = 152.0
+offset_top = 116.0
+offset_right = 168.0
+offset_bottom = 131.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_1" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_1"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 137.0
+offset_top = 116.0
+offset_right = 151.0
+offset_bottom = 130.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_1/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_1"]
+offset_left = 136.0
+offset_top = 115.0
+offset_right = 152.0
+offset_bottom = 131.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_2" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 169.0
+offset_top = 116.0
+offset_right = 183.0
+offset_bottom = 130.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_2/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_2"]
+offset_left = 168.0
+offset_top = 115.0
+offset_right = 183.0
+offset_bottom = 131.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_3" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_3"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 169.0
+offset_top = 100.0
+offset_right = 183.0
+offset_bottom = 114.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_3/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_3"]
+offset_left = 168.0
+offset_top = 99.0
+offset_right = 184.0
+offset_bottom = 115.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_4" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_4"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 185.0
+offset_top = 100.0
+offset_right = 199.0
+offset_bottom = 114.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_4/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_4"]
+offset_left = 184.0
+offset_top = 99.0
+offset_right = 200.0
+offset_bottom = 115.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_5" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_5"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 137.0
+offset_top = 100.0
+offset_right = 151.0
+offset_bottom = 114.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_5/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_5"]
+offset_left = 136.0
+offset_top = 99.0
+offset_right = 152.0
+offset_bottom = 115.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_6" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_6"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 121.0
+offset_top = 100.0
+offset_right = 135.0
+offset_bottom = 114.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_6/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_6"]
+offset_left = 120.0
+offset_top = 99.0
+offset_right = 136.0
+offset_bottom = 115.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_7" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_7"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 121.0
+offset_top = 84.0
+offset_right = 135.0
+offset_bottom = 98.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_7/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_7"]
+offset_left = 120.0
+offset_top = 83.0
+offset_right = 136.0
+offset_bottom = 99.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_8" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_8"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 153.0
+offset_top = 84.0
+offset_right = 167.0
+offset_bottom = 98.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_8/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_8"]
+offset_left = 152.0
+offset_top = 83.0
+offset_right = 168.0
+offset_bottom = 99.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_9" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_9"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 169.0
+offset_top = 84.0
+offset_right = 183.0
+offset_bottom = 98.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_9/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_9"]
+offset_left = 168.0
+offset_top = 83.0
+offset_right = 184.0
+offset_bottom = 99.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_10" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_10"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 201.0
+offset_top = 84.0
+offset_right = 215.0
+offset_bottom = 98.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_10/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_10"]
+offset_left = 200.0
+offset_top = 83.0
+offset_right = 216.0
+offset_bottom = 99.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_11" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_11"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 105.0
+offset_top = 68.0
+offset_right = 119.0
+offset_bottom = 82.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_11/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_11"]
+offset_left = 104.0
+offset_top = 68.0
+offset_right = 120.0
+offset_bottom = 84.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_12" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_12"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 121.0
+offset_top = 68.0
+offset_right = 135.0
+offset_bottom = 82.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_12/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_12"]
+offset_left = 120.0
+offset_top = 67.0
+offset_right = 136.0
+offset_bottom = 83.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_13" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_13"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 137.0
+offset_top = 68.0
+offset_right = 151.0
+offset_bottom = 82.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_13/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_13"]
+offset_left = 136.0
+offset_top = 67.0
+offset_right = 152.0
+offset_bottom = 83.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_14" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_14"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 153.0
+offset_top = 68.0
+offset_right = 167.0
+offset_bottom = 82.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_14/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_14"]
+offset_left = 152.0
+offset_top = 67.0
+offset_right = 168.0
+offset_bottom = 83.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_15" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_15"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 169.0
+offset_top = 68.0
+offset_right = 183.0
+offset_bottom = 82.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_15/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_15"]
+offset_left = 168.0
+offset_top = 67.0
+offset_right = 184.0
+offset_bottom = 83.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_16" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_16"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 185.0
+offset_top = 68.0
+offset_right = 199.0
+offset_bottom = 82.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_16/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_16"]
+offset_left = 184.0
+offset_top = 67.0
+offset_right = 200.0
+offset_bottom = 83.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_17" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_17"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 201.0
+offset_top = 68.0
+offset_right = 215.0
+offset_bottom = 82.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_17/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_17"]
+offset_left = 200.0
+offset_top = 67.0
+offset_right = 216.0
+offset_bottom = 83.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_room_18" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_room_18"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 217.0
+offset_top = 68.0
+offset_right = 231.0
+offset_bottom = 82.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_room_18/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_room_18"]
+offset_left = 216.0
+offset_top = 67.0
+offset_right = 232.0
+offset_bottom = 83.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="fd_boss_room" type="Node2D" parent="."]
+
+[node name="blink" type="ColorRect" parent="fd_boss_room"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 153.0
+offset_top = 52.0
+offset_right = 167.0
+offset_bottom = 66.0
+color = Color(0.831373, 0.682353, 0.486275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fd_boss_room/blink"]
+process_mode = 3
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_6m8uf")
+}
+
+[node name="hide" type="ColorRect" parent="fd_boss_room"]
+offset_left = 152.0
+offset_top = 51.0
+offset_right = 168.0
+offset_bottom = 67.0
+color = Color(0.415686, 0.643137, 0.262745, 1)
+
+[node name="Skull" type="Sprite2D" parent="."]
+position = Vector2(160, 59.008)
+texture = ExtResource("3_ybdbs")
+
+[node name="SkullKey" type="Sprite2D" parent="."]
+position = Vector2(224, 73.008)
+scale = Vector2(1, 0.8)
+texture = ExtResource("4_gg71o")

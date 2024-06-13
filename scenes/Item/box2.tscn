@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://buh6ewar4775r"]
+
+[ext_resource type="Texture2D" uid="uid://dkjbxa8apbl5t" path="res://sprites/Dungeon tileset/box.png" id="1_fvipk"]
+[ext_resource type="Script" path="res://scripts/Items/box2.gd" id="1_vtrrx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mumvt"]
+size = Vector2(17.7778, 17.7778)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocolr"]
+size = Vector2(16, 16)
+
+[node name="Box" type="RigidBody2D"]
+mass = 0.01
+center_of_mass_mode = 1
+gravity_scale = 0.0
+script = ExtResource("1_vtrrx")
+
+[node name="Box" type="Sprite2D" parent="."]
+texture = ExtResource("1_fvipk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+y_sort_enabled = true
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_mumvt")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(7, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, -2)
+shape = SubResource("RectangleShape2D_ocolr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
